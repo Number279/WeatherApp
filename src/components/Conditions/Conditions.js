@@ -1,16 +1,14 @@
 import React from 'react';
-
-
-/* Added conditions component, be mindful of capitilization as 
-the tutorial had it lowercased in some instances
-
-Conditions.module.css is also included in the conditions folder
-
-*/
+import classes from './Conditions.module.css';
+// link to css style in div
 
 const Conditions = (props) => {
    return (
-       <div>
+       <div className={classes.Wrapper}> 
+           {props.error && <small>Please enter a valid city.</small>}
+           {/* // Error handling entered per "Error Handling and Loading" step6 */}
+            {props.loading && <div>Loading...</div>}
+
            {props.responseObj.cod === 200 ?
                <div>
                    <p><strong>{props.responseObj.name}</strong></p>
