@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Conditions from '../Conditions/Conditions';
 import classes from './Forecast.module.css';
 
+
 const Forecast = () => {
 
     let [city, setCity] = useState('');
@@ -24,12 +25,13 @@ function getForecast(e) {
     setLoading(true);
     
     const uriEncodedCity = encodeURIComponent(city);
+   
 
     fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-            "x-rapidapi-key": "1339832016msh185cc2a6212e468p1efbe7jsn5c6da8f411bb"
+            "x-rapidapi-key":  process.env.REACT_APP_MY_ENV
         }
     })
     .then(response => response.json())
