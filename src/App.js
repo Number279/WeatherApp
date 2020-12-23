@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '.components/Logo/Logo';
+import logo from './Logo/logo';
 import './App.css';
-import Forecast from "./components/Forecast/Forecast";
+import Forecast from "./Forecast/Forecast";
 
 function App() {
   return (
